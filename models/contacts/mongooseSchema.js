@@ -21,6 +21,10 @@ const contactSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: 'user',
+    },
   },
   {
     versionKey: false,
@@ -29,7 +33,6 @@ const contactSchema = new Schema(
 );
 
 contactSchema.post('save', handleMongooseError);
-
 const Contact = model('contact', contactSchema);
 
 module.exports = Contact;
