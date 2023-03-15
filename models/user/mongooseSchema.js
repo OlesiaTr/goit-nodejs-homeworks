@@ -3,6 +3,10 @@ const { regexEmail, handleMongooseError, subEnum } = require('../../utils');
 
 const userSchema = new Schema(
   {
+    name: {
+      type: String,
+      required: [true, 'Name is required'],
+    },
     password: {
       type: String,
       required: [true, 'Password is required'],
