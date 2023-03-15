@@ -13,4 +13,11 @@ router.post('/signin', validateBody(userJoi.signInSchema), authCtrls.signin);
 
 router.post('/logout', authenticator, authCtrls.logout);
 
+router.patch(
+  '/',
+  authenticator,
+  validateBody(userJoi.changeSubStatusSchema),
+  authCtrls.changeSubStatus
+);
+
 module.exports = router;
