@@ -1,4 +1,4 @@
-const { ctrlWrapper } = require('../utils/');
+const { ctrlWrapper } = require('../../utils');
 const getAll = require('./getAll');
 const getById = require('./getById');
 const addContact = require('./addContact');
