@@ -10,11 +10,11 @@ const signup = async (req, res) => {
   if (user) throw HttpError(409, 'Email is already in use');
 
   const hashPswrd = await bcrypt.hash(password, 10);
-  const avatarUrl = gravatar.url(email);
+  const avatarURL = gravatar.url(email);
   const newUser = await User.create({
     ...req.body,
     password: hashPswrd,
-    avatarUrl,
+    avatarURL,
   });
 
   res.status(201).json({
