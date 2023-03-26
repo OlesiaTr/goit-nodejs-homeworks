@@ -3,7 +3,6 @@ const ctrlWrapper = require('./ctrlWrapper');
 const { regexEmail, regexPhone } = require('./regex');
 const handleMongooseError = require('./handleMongooseError');
 const subEnum = require('./mongooseEnums');
-const sendEmail = require('./sendEmail');
 
 module.exports = {
   HttpError,
@@ -12,5 +11,4 @@ module.exports = {
   regexPhone,
   handleMongooseError,
   subEnum,
-  sendEmail,
 };
