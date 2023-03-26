@@ -4,6 +4,7 @@ const signup = require('./signup');
 const signin = require('./signin');
 const logout = require('./logout');
 const changeSubStatus = require('./changeSubStatus');
+const verifyEmail = require('./verifyEmail');
 
 const authCtrls = {
   getCurrent: ctrlWrapper(getCurrent),
@@ -11,6 +12,7 @@ const authCtrls = {
   signin: ctrlWrapper(signin),
   logout: ctrlWrapper(logout),
   changeSubStatus: ctrlWrapper(changeSubStatus),
+  verifyEmail: ctrlWrapper(verifyEmail),
 };
 
 module.exports = authCtrls;
