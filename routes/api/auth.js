@@ -1,5 +1,5 @@
 const express = require('express');
-const { validateBody, authenticator } = require('../../middlewares/');
+const { validateBody, authenticator, upload } = require('../../middlewares/');
 const { userJoi } = require('../../models');
 const { authCtrls } = require('../../controllers');
 
@@ -20,6 +20,13 @@ router.patch(
   authenticator,
   validateBody(userJoi.changeSubStatusSchema),
   authCtrls.changeSubStatus
+);
+
+router.patch(
+  '/avatars',
+  authenticator,
+  upload.single('avatar'),
+  authCtrls.changeAvatar
 );
 
 module.exports = router;
