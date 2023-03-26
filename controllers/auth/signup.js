@@ -16,10 +16,6 @@ const signup = async (req, res) => {
   const avatarURL = gravatar.url(email);
   const verificationToken = uuidv4();
 
-  console.log(uuidv4);
-  console.log(BASE_URL);
-  console.log(verificationToken);
-
   const newUser = await User.create({
     ...req.body,
     password: hashPswrd,

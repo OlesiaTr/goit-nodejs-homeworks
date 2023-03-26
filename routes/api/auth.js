@@ -15,6 +15,8 @@ router.post('/signin', validateBody(userJoi.signInSchema), authCtrls.signin);
 
 router.post('/logout', authenticator, authCtrls.logout);
 
+router.post('/verify', authCtrls.resendEmail);
+
 router.patch(
   '/',
   authenticator,
